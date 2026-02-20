@@ -1,0 +1,38 @@
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - LLM_URL=http://llm:8000
+      - LITELLM_URL=http://litellm:4000
+    depends_on:
+      - llm
+      - litellm
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+
+  llm:
+    build:
+      context: ./llm
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - LITELLM_URL=http://litellm:4000
+    volumes:
+      - ./llm:/app
+      - ./llm/projects:/app/projects
+
+  litellm:
+    build:
+      context: ./litellm
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    environment:
+      - PORT=4000
+    volumes:
+      - ./litellm:/app 
