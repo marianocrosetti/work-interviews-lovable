@@ -1,0 +1,96 @@
+/* Chat message timeline and step styling */
+.markdown code {
+	@apply bg-slate-800 px-2 py-1 rounded font-mono text-sm;
+}
+
+.markdown pre {
+	@apply bg-slate-800 p-3 rounded overflow-x-auto my-2;
+}
+
+.markdown pre code {
+	@apply bg-transparent p-0;
+}
+
+.markdown p {
+	@apply my-2;
+}
+
+.markdown ul {
+	@apply list-disc pl-5 my-2;
+}
+
+.markdown ol {
+	@apply list-decimal pl-5 my-2;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3 {
+	@apply font-semibold my-3;
+}
+
+.markdown h1 {
+	@apply text-xl;
+}
+
+.markdown h2 {
+	@apply text-lg;
+}
+
+.markdown h3 {
+	@apply text-base;
+}
+
+.markdown a {
+	@apply text-blue-400 underline;
+}
+
+.markdown blockquote {
+	@apply border-l-4 border-slate-600 pl-4 italic my-2;
+}
+
+.markdown table {
+	@apply border-collapse w-full my-2;
+}
+
+.markdown th,
+.markdown td {
+	@apply border border-slate-600 px-3 py-2;
+}
+
+.markdown th {
+	@apply bg-slate-800;
+}
+
+/* Enhanced styling for message steps */
+.markdown-streaming {
+	@apply animate-pulse;
+}
+
+/* Fix for sticky positioning and z-index issues */
+.sticky {
+	position: sticky;
+	isolation: isolate;
+}
+
+/* Ensure fixed headers stay above content */
+.fixed {
+	isolation: isolate;
+}
+
+/* Fix for overflow issues with flex containers */
+.flex {
+	min-height: 0;
+	min-width: 0;
+}
+
+/* Ensure proper rendering of nested flex containers */
+.flex-col {
+	min-height: 0;
+}
+
+/* Ensure shadow appears correctly on sticky headers */
+.shadow-md {
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+		0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
